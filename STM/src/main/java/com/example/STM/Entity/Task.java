@@ -26,7 +26,7 @@ public class Task {
     @JsonIgnore
     private User owner;
 
-    public Task(String title, String description, Type type, Status status, User owner) {
+    public Task(String title, String description, Task.Type type, Task.Status status, User owner) {
         this.title = title;
         this.description = description;
         this.type = type;

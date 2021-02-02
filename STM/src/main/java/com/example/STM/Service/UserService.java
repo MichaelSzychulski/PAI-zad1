@@ -1,6 +1,5 @@
 package com.example.STM.Service;
 
-import com.example.STM.Entity.Task;
 import com.example.STM.Entity.User;
 import com.example.STM.Repository.UserRepository;
 import lombok.Data;
@@ -31,11 +30,11 @@ public class UserService {
     }
 
     //Zad1 - c
-    public User findByIdOrEmail(String key){
+    public Optional<User> findByIdOrEmail(String key){
         Optional<User> user;
         if(key.contains("@")) user = userRepository.findByEmail(key);
         else user = userRepository.findById(Long.valueOf(key));
-        return user.get();
+        return user;
     }
 
     //Zad1 - d

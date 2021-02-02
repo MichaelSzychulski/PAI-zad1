@@ -1,13 +1,13 @@
 package com.example.STM.Controller;
 
-import com.example.STM.Entity.Task;
-import com.example.STM.Entity.User;
+import com.example.STM.Entity.*;
 import com.example.STM.Service.TaskService;
 import com.example.STM.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class MainController {
@@ -38,7 +38,9 @@ public class MainController {
     public User findUser(
             @RequestParam String key
     ){
-        return userService.findByIdOrEmail(key);
+        Optional<User> user = userService.findByIdOrEmail(key);
+        if(user.isPresent()) return user.get();
+        else return null;
     }
 
     //Zad1 - d

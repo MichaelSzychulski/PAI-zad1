@@ -1,6 +1,5 @@
 package com.example.STM.Entity;
 
-import com.example.STM.Entity.Task;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
@@ -22,7 +21,7 @@ public class User {
     private String password;
     private boolean status = false;
     private LocalDateTime registrationDateTime = LocalDateTime.now();
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     @JsonIgnore
     private List<Task> tasks;
 

@@ -1,7 +1,7 @@
 package com.example.STM.Service;
 
 import com.example.STM.Entity.Task;
-import com.example.STM.Repository.TaskRepository;
+import com.example.STM.Repository.*;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
